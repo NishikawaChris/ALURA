@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+//Tudo que vem acompanhado de # chama-se diretiva.
+//Por convenção, escreve-se as constantes em caixa alta e separadas por underscore.
+#define NUMERO_DE_TENTATIVA 5
+
 int main(){
 printf("*************************************\n");
 printf("Seja bem vindo ao jogo de advinhação!\n");
@@ -9,8 +13,8 @@ int numerosecreto = 42;
 
 int chute;
 
-for(int tentativa = 1; tentativa <= 3; tentativa++){
-        printf("Tentativa %d de 3\n", tentativa);
+for(int tentativa = 1; tentativa <= NUMERO_DE_TENTATIVA; tentativa++){
+        printf("Tentativa %d de %d\n", tentativa, NUMERO_DE_TENTATIVA);
         printf("Qual o seu chute? ");
         scanf("%d", &chute);
         printf("Seu chute foi %d\n", chute);
@@ -19,8 +23,8 @@ for(int tentativa = 1; tentativa <= 3; tentativa++){
 
         if(acertou) {
             printf("Parabéns! Você acertou!\n");
-            //Para parar o programa quando o usuário acerta.
             
+            //Para parar o programa quando o usuário acerta.
             break;
         }
         else{
