@@ -19,7 +19,18 @@ for(int tentativa = 1; tentativa <= NUMERO_DE_TENTATIVA; tentativa++){
         scanf("%d", &chute);
         printf("Seu chute foi %d\n", chute);
 
+    //Este código serve para impedir que o usuário informe um número negativo.
+    if(chute < 0) {
+        printf("Você não pode informar um número negativo!\n");
+        tentativa--;
+
+        //Este código faz o programa parar na execução do bloco e ir direto par ao "tentativa++"
+        continue;
+    }
+
     int acertou = (chute == numerosecreto);
+    int maior = chute > numerosecreto;
+    int menor = chute < numerosecreto;
 
         if(acertou) {
             printf("Parabéns! Você acertou!\n");
@@ -27,13 +38,14 @@ for(int tentativa = 1; tentativa <= NUMERO_DE_TENTATIVA; tentativa++){
             //Para parar o programa quando o usuário acerta.
             break;
         }
-        else{
-            int maior = (chute > numerosecreto);
-            if(maior) {
-                printf("Seu chute foi maior que o número secreto!\n");
-            } else{
-                printf("Seu número é menor que o número secreto!\n");
-            }
+      
+      //Se a condição de um else if for verdadeira, o programa não irá mais compilar os demais.
+       else if(maior) {
+             printf("Seu chute foi maior que o número secreto!\n");
+        }
+            
+        else {
+            printf("Seu número é menor que o número secreto!\n");
         }  
     }
 
