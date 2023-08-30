@@ -12,13 +12,12 @@ printf("*************************************\n");
 int numerosecreto = 42;
 
 int chute;
-int ganhou = 0;
 int tentativas = 1;
 
 //O "for" é um loop ideal para quando o usuário sabe o número exato de tentativas.
 //for(int tentativa = 1; tentativa <= NUMERO_DE_TENTATIVA; tentativa++){
 //Com a variável while
-while(ganhou == 0) {
+while(1) {
         printf("Tentativa %d\n", tentativas);
         printf("Qual o seu chute? ");
         scanf("%d", &chute);
@@ -41,9 +40,8 @@ while(ganhou == 0) {
             printf("Parabéns! Você acertou!\n");
             
             //Para parar o programa quando o usuário acerta.
-           //break;
-           ganhou = 1;
-        }
+           break;
+            }
       
       //Se a condição de um else if for verdadeira, o programa não irá mais compilar os demais.
        else if(maior) {
@@ -54,7 +52,7 @@ while(ganhou == 0) {
             printf("Seu número é menor que o número secreto!\n");
         } 
 
-        tentativas = tentativas + 1;
+        tentativas++;
     }
 
     printf("FIM DE JOGO!!!\n");
