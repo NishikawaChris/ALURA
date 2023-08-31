@@ -14,6 +14,9 @@ int numerosecreto = 42;
 int chute;
 int tentativas = 1;
 
+int pontos = 1000;
+
+
 //O "for" é um loop ideal para quando o usuário sabe o número exato de tentativas.
 //for(int tentativa = 1; tentativa <= NUMERO_DE_TENTATIVA; tentativa++){
 //Com a variável while
@@ -53,9 +56,14 @@ while(1) {
         } 
 
         tentativas++;
+        //Esta variável foi feita para contagem de pontos ao fim do programa. 
+        int pontosperdidos = (chute - numerosecreto) / 2;
+        pontos = pontos - pontosperdidos;
     }
 
     printf("FIM DE JOGO!!!\n");
 
     printf("Você acertou o número secreto em %d tentativas!\n", tentativas);
+
+    printf("Total de pontos: %d\n", pontos);
 }
