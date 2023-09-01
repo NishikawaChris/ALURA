@@ -10,12 +10,11 @@ printf("Seja bem vindo ao jogo de advinhação!\n");
 printf("*************************************\n");
 
 int numerosecreto = 42;
-
 int chute;
 int tentativas = 1;
+double pontos = 1000;
 
-int pontos = 1000;
-
+double pi = 3.1415;
 
 //O "for" é um loop ideal para quando o usuário sabe o número exato de tentativas.
 //for(int tentativa = 1; tentativa <= NUMERO_DE_TENTATIVA; tentativa++){
@@ -57,7 +56,7 @@ while(1) {
 
         tentativas++;
         //Esta variável foi feita para contagem de pontos ao fim do programa. 
-        int pontosperdidos = (chute - numerosecreto) / 2;
+        double pontosperdidos = (chute - numerosecreto) / (double)2;
         pontos = pontos - pontosperdidos;
     }
 
@@ -65,5 +64,5 @@ while(1) {
 
     printf("Você acertou o número secreto em %d tentativas!\n", tentativas);
 
-    printf("Total de pontos: %d\n", pontos);
+    printf("Total de pontos: %.1f\n", pontos);
 }
