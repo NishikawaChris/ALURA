@@ -1,16 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 //Tudo que vem acompanhado de # chama-se diretiva.
 //Por convenção, escreve-se as constantes em caixa alta e separadas por underscore.
 //#define NUMERO_DE_TENTATIVA 5
+
 
 int main(){
 printf("*************************************\n");
 printf("Seja bem vindo ao jogo de advinhação!\n");
 printf("*************************************\n");
 
-int numerosecreto = 42;
+//Essa função ajuda a definir um número aleatório a ser advinhado, utilizando como base os segundos atuais.
+//A função altera o cálculo da semente.
+int segundos = time(0);
+srand(segundos);
+
+//A variável rand retornará um valor aleatório, que pode ser um número com muitos dígitos.
+int numeroGrande = rand();
+
+//Essa função restringe as possibilidades de números aleatórios para até 100, 
+//trazendo como resultado o resto de uma divisão por 100.
+int numerosecreto = numeroGrande % 100;
 int chute;
 int tentativas = 1;
 double pontos = 1000;

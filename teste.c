@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main() {
-int a = 3;
-int b = -3;
+    int segundos = time(0);
+    srand(segundos);
 
-//função abs converte um número negativo em positivo.
-int c = abs(a * b);
+    int n1 = rand();
+    int n2 = rand();
 
-printf("%d\n", c);
+    printf("%d %d\n", n1, n2);
 }
