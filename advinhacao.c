@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //Tudo que vem acompanhado de # chama-se diretiva.
 //Por convenção, escreve-se as constantes em caixa alta e separadas por underscore.
@@ -55,8 +56,11 @@ while(1) {
         } 
 
         tentativas++;
-        //Esta variável foi feita para contagem de pontos ao fim do programa. 
-        double pontosperdidos = (double)(chute - numerosecreto) / (double)2;
+        //Esta variável foi feita para contagem de pontos ao fim do programa.
+        //Pode-se utilizar a função abs para converter um número negativo em positivo.
+        //Para tanto, é preciso incluir a biblioteca <stdlib.h>.
+        //Com isso, a pontuação não poderá ser maior que 1000 pontos, sem utilizar mais um if.
+        double pontosperdidos = abs(chute - numerosecreto) / (double)2;
         pontos = pontos - pontosperdidos;
     }
 

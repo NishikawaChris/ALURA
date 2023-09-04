@@ -1,14 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    int a = 3;
-    int b = 2;
+int a = 3;
+int b = -3;
 
-    //O exemplo abaixo representa um casting.
-    double pontos = (double)a / (double)b;
-    printf("%f\n", pontos);
+//função abs converte um número negativo em positivo.
+int c = abs(a * b);
 
-    double pi = 3.1415;
-    int piconvertido = (int)pi;
-    printf("%f %d", pi, piconvertido);
+printf("%d\n", c);
 }
