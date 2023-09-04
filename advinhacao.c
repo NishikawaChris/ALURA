@@ -56,7 +56,7 @@ while(1) {
 
         tentativas++;
         //Esta variável foi feita para contagem de pontos ao fim do programa. 
-        double pontosperdidos = (chute - numerosecreto) / (double)2;
+        double pontosperdidos = (double)(chute - numerosecreto) / (double)2;
         pontos = pontos - pontosperdidos;
     }
 
@@ -64,5 +64,5 @@ while(1) {
 
     printf("Você acertou o número secreto em %d tentativas!\n", tentativas);
 
-    printf("Total de pontos: %.1f\n", pontos);
+    printf("Total de pontos: %.2f\n", pontos);
 }

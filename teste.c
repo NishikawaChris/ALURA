@@ -9,6 +9,6 @@ int main() {
     printf("%f\n", pontos);
 
     double pi = 3.1415;
-    int piconvertido = (int)pi
-    printf("%f %d", pi, piconvertido)
+    int piconvertido = (int)pi;
+    printf("%f %d", pi, piconvertido);
 }
