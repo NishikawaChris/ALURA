@@ -27,12 +27,45 @@ int chute;
 int tentativas = 1;
 double pontos = 1000;
 
-double pi = 3.1415;
+int acertou = 0;
+
+int nivel;
+printf("Qual o nível de dificuldade?\n");
+printf("1. Fácil\n2. Médio\n3. Difícil\n\n");
+printf("Escolha: ");
+scanf("%d", &nivel);
+
+int numerodetentativas;
+
+//Pode-se usar a função switch para simplificar o uso de if para implementar um processo de escolha.
+//Para que o switch não leia todas as alternativas, é preciso incluir o break
+    switch(nivel) {
+        case 1:
+            numerodetentativas = 20;
+            break;
+
+        case 2:
+            numerodetentativas = 15;
+            break;
+
+        default:
+            numerodetentativas = 5;
+            break;
+    }
+   // if (nivel == 1) {
+    //    numerodetentativas = 20;
+    //}
+    //else if (nivel == 2) {
+    //    numerodetentativas = 15;
+    //} else {
+      //  numerodetentativas = 5;
+    //}
 
 //O "for" é um loop ideal para quando o usuário sabe o número exato de tentativas.
-//for(int tentativa = 1; tentativa <= NUMERO_DE_TENTATIVA; tentativa++){
+for(int tentativa = 1; tentativa <= numerodetentativas; tentativa++) {
+//É possível substituir numerodetentativas por NUMERO_DE_TENTATIVA caso a diretiva #define seja utilizada.
 //Com a variável while
-while(1) {
+//while(1) {
         printf("Tentativa %d\n", tentativas);
         printf("Qual o seu chute? ");
         scanf("%d", &chute);
@@ -47,12 +80,12 @@ while(1) {
         continue;
     }
 
-    int acertou = (chute == numerosecreto);
+     acertou = (chute == numerosecreto);
     int maior = chute > numerosecreto;
    //int menor = chute < numerosecreto;
 
         if(acertou) {
-            printf("Parabéns! Você acertou!\n");
+            //printf("Parabéns! Você acertou!\n");
             
             //Para parar o programa quando o usuário acerta.
            break;
@@ -78,7 +111,11 @@ while(1) {
 
     printf("FIM DE JOGO!!!\n");
 
-    printf("Você acertou o número secreto em %d tentativas!\n", tentativas);
-
-    printf("Total de pontos: %.2f\n", pontos);
+    if(acertou) {
+        printf("Você ganhou!!!\n");
+        printf("Você acertou o número secreto em %d tentativas!\n", tentativas);
+        printf("Total de pontos: %.2f\n", pontos);
+    } else {
+        printf("Você perdeu!!! Tente outra vez!\n");
+    } 
 }
