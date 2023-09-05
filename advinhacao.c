@@ -8,9 +8,20 @@
 
 
 int main(){
-printf("*************************************\n");
-printf("Seja bem vindo ao jogo de advinhação!\n");
-printf("*************************************\n");
+
+printf("\n\n");
+printf("        / \\               / \\                                 \n");
+printf("       /   \\             /   \\                                \n");
+printf("      (_____)           (_____)                                 \n");
+printf("       |   |  _   _   _  |   |           Bem vindo ao jogo      \n");
+printf("       | O |_| |_| |_| |_| O |            da Advinhação!!!      \n");
+printf("       |-  |          _  | - |                                  \n");    
+printf("       |   |   - _^_     |   |                                  \n");
+printf("       |  _|    //|\\\\  - |   |                                \n");
+printf("       |   |   ///|\\\\\\   |  -|                               \n");
+printf("       |-  |_  |||||||   |   |                                  \n");
+printf("       |   |   |||||||   |-  |                                  \n");
+printf("       |___|___|||||||___|___|                                  \n");
 
 //Essa função ajuda a definir um número aleatório a ser advinhado, utilizando como base os segundos atuais.
 //A função altera o cálculo da semente.
@@ -29,6 +40,7 @@ double pontos = 1000;
 
 int acertou = 0;
 
+//Implementação de sistema de dificuldade.
 int nivel;
 printf("Qual o nível de dificuldade?\n");
 printf("1. Fácil\n2. Médio\n3. Difícil\n\n");
@@ -112,10 +124,28 @@ for(int tentativa = 1; tentativa <= numerodetentativas; tentativa++) {
     printf("FIM DE JOGO!!!\n");
 
     if(acertou) {
+    
+        printf("\n\n");
+        printf("              .ssSSSSss.                        \n");
+        printf("            .ER'      `AM.                      \n");
+        printf("          .ST'          `CS.                    \n");
+        printf("         .E'  .S.    .S.  `S.                   \n");
+        printf("        .L'   SSS    SSS   `S.                  \n");
+        printf("        S'    `S'    `S'    `S                  \n");
+        printf("        S                    S                  \n");
+        printf("        S                    S                  \n");
+        printf("        S.  00          00   S                  \n");    
+        printf("        `S. 000        000  S'                  \n");
+        printf("         `S.  000    000  .S'                   \n");
+        printf("          `SS.    00    .SS'                    \n");
+        printf("            `SS.      .SS'                      \n");
+        printf("              `SSssssSS'                        \n\n\n");
+        
         printf("Você ganhou!!!\n");
         printf("Você acertou o número secreto em %d tentativas!\n", tentativas);
         printf("Total de pontos: %.2f\n", pontos);
     } else {
         printf("Você perdeu!!! Tente outra vez!\n");
+
     } 
 }
